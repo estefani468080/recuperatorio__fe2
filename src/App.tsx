@@ -1,8 +1,8 @@
 import React from "react";
-import Quote from "./features/quote/Quote";
+import Cita from "./features/quote/Cita";
 import "./App.css";
 import Bio from "./features/bio/Bio";
-import { News } from "./features/news/News";
+import Noticias from "./features/news/Noticias";
 
 function App() {
   return (
@@ -13,13 +13,13 @@ function App() {
           alt="The-Simpsons"
           className="logo"
         />
-        <Quote />
+        <Cita />
       </header>
       <section className="App-bio">
         <Bio />
       </section>
       <section className="App-news">
-        <News />
+        <Noticias />
       </section>
     </div>
   );

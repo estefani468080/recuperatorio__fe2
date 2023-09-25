@@ -1,21 +1,21 @@
 import {
-  STATE_FETCH,
-  INVALID_NAME,
-  LOAD_MESSAGE,
-  NOT_FOUND,
+  ESTADO_FETCH,
+  NOMBRE_INVALIDO,
+  MENSAJE_CARGANDO,
+  NO_ENCONTRADO,
 } from "./constants";
 
-export const getMessage: (
-  quote: string,
-  estadoPedido: STATE_FETCH
-) => string = (quote, estadoPedido) => {
-  if (estadoPedido === STATE_FETCH.LOAD) {
-    return LOAD_MESSAGE;
+export const obtenerMensaje: (
+  cita: string,
+  estadoPedido: ESTADO_FETCH
+) => string = (cita, estadoPedido) => {
+  if (estadoPedido === ESTADO_FETCH.CARGANDO) {
+    return MENSAJE_CARGANDO;
   }
 
-  if (estadoPedido === STATE_FETCH.ERROR) {
-    return INVALID_NAME;
+  if (estadoPedido === ESTADO_FETCH.ERROR) {
+    return NOMBRE_INVALIDO;
   }
 
-  return quote ? `${quote}` : NOT_FOUND;
+  return cita ? `${cita}` : NO_ENCONTRADO;
 };

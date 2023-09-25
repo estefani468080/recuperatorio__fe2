@@ -1,44 +1,46 @@
-import React ,{ useState } from "react";
-import { NamesSimpsons, INFO_SIMPSONS } from "./constants";
-import * as styled from "./styled";
+import { useState } from "react";
+import { NombresSimpsons, INFO_SIMPSONS } from "./constants";
+import {
+  BioContainer,
+  BioImagen,
+  BioNombre,
+  BioDescripcion,
+  ContenedorBotones,
+  ButtonBio,
+} from "./styled";
 
 const Bio = () => {
-  const [bioActive, setbioActive] = useState(
-    INFO_SIMPSONS[NamesSimpsons.BART]
+  const [bioActiva, setBioActiva] = useState(
+    INFO_SIMPSONS[NombresSimpsons.BART]
   );
-  
 
-  const onClick: (name: NamesSimpsons) => void = (name) =>
-    setbioActive(INFO_SIMPSONS[name]);
+  const onClick: (nombre: NombresSimpsons) => void = (nombre) =>
+    setBioActiva(INFO_SIMPSONS[nombre]);
 
-  const createButtons = () => {
-    return Object.keys(INFO_SIMPSONS).map((name: string) => (
-      <styled.ButtonBio
-        key={name as string}
-        onClick={() => onClick(name as NamesSimpsons)}
-        isActive={bioActive.id === name ? true: false}
-      >
-        {name}
-      </styled.ButtonBio>
+  const crearBotones = () => {
+    return Object.keys(INFO_SIMPSONS).map((nombre: string) => (
+      <ButtonBio
+        key={nombre as string}
+        onClick={() => onClick(nombre as NombresSimpsons)}
+        active={bioActiva.id === nombre ? true : false}>
+        {nombre}
+      </ButtonBio>
     ));
   };
 
   return (
-    <styled.BioContainer>
-      <styled.ContainerButton>{createButtons()}</styled.ContainerButton>
+    <BioContainer>
+      <ContenedorBotones>{crearBotones()}</ContenedorBotones>
       <div>
         <div>
-          <styled.BioImage
-            src={bioActive.image}
-            alt={bioActive.name}
-          />
+          <BioImagen src={bioActiva.image} alt={bioActiva.nombre} />
         </div>
         <div>
-          <styled.BioName>{bioActive.name}</styled.BioName>
-          <styled.BioDescription>{bioActive.description}</styled.BioDescription>
+          <BioNombre>{bioActiva.nombre}</BioNombre>
+          <BioDescripcion>{bioActiva.descripcion}</BioDescripcion>
         </div>
       </div>
-    </styled.BioContainer>
+    </BioContainer>
   );
 };
 

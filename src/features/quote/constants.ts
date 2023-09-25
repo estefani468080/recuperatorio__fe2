@@ -1,9 +1,9 @@
-export enum STATE_FETCH {
-  INACTIVE,
-  LOAD,
+export enum ESTADO_FETCH {
+  INACTIVO,
+  CARGANDO,
   ERROR,
 }
 
-export const LOAD_MESSAGE = "CARGANDO...";
-export const INVALID_NAME = "Por favor ingrese un nombre válido";
-export const NOT_FOUND = "No se encontro ninguna cita";
+export const MENSAJE_CARGANDO = "CARGANDO...";
+export const NOMBRE_INVALIDO = "Por favor ingrese un nombre válido";
+export const NO_ENCONTRADO = "No se encontro ninguna cita";

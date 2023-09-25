@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const ContainerQuote = styled.div`
+export const ContenedorCita = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@ export const ContainerQuote = styled.div`
   background-color: whitesmoke;
 `;
 
-export const TextoQuote = styled.p`
+export const TextoCita = styled.p`
   font-size: 2rem;
   font-weight: bold;
   color: #333;
@@ -24,7 +24,7 @@ export const TextoQuote = styled.p`
   min-height: 5rem;
 `;
 
-export const AutorQuote = styled.p`
+export const AutorCita = styled.p`
   font-size: 1.7rem;
   font-weight: bold;
   color: #333;
@@ -44,7 +44,7 @@ export const Input = styled.input`
   font-family: "Homer Simpson Revised", sans-serif;
 `;
 
-export const Button = styled.button<{ secondary?: boolean }>`
+export const Boton = styled.button<{ secondary?: boolean }>`
   width: 45%;
   min-width: 250px;
   height: 50px;
