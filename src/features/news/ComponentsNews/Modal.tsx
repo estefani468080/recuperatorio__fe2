@@ -1,13 +1,15 @@
 import React from "react";
 import * as styled from "../styled";
-import { INewsNormalizadas } from "../types";
+import * as cardStyles from "../card/Card.styles";
+import * as cardModalStyles from "../modal/CardModal.styles";
+import { INoticiasNormalizadas } from "../types";
 import { SuscribeImage, CloseButton as Close } from "../../../assets";
 
 
 type Props = { 
-  isPremium: boolean,
-  modal?:INewsNormalizadas | null,
-  setModal: React.Dispatch<React.SetStateAction<INewsNormalizadas | null>>;
+  esPremium: boolean,
+  modal?:INoticiasNormalizadas | null,
+  setModal: React.Dispatch<React.SetStateAction<INoticiasNormalizadas | null>>;
 }
 
 const modalConstants = {
@@ -16,7 +18,7 @@ const modalConstants = {
 };
 
 
-export const Modal = ({isPremium, modal, setModal}: Props) => {
+export const Modal = ({esPremium, modal, setModal}: Props) => {
   
   function alertSuscription() {
     setTimeout(() => {
@@ -24,33 +26,33 @@ export const Modal = ({isPremium, modal, setModal}: Props) => {
       setModal(null);
     }, 1000);}
 
-  const imgSrc = isPremium?SuscribeImage:modal?.image;
-  const imgAlt = isPremium?"news-image":"mr-burns-excelent";
+  const imgSrc = esPremium?SuscribeImage:modal?.imagen;
+  const imgAlt = esPremium?"news-image":"mr-burns-excelent";
 
-  const titleModal = isPremium?modalConstants.title:modal?.title;
-  const descriptionModal = isPremium?modalConstants.description:modal?.description;
+  const titleModal = esPremium?modalConstants.title:modal?.titulo;
+  const descriptionModal = esPremium?modalConstants.description:modal?.descripcion;
 
 
   return (
 
-    <styled.ContainerModal>
-      <styled.CardModal>
+    <styled.ContenedorModal>
+      <cardModalStyles.TarjetaModal>
         <styled.CloseButton onClick={() => setModal(null)}>
           <img src={Close} alt="close-button" />
         </styled.CloseButton>
-        <styled.ImageModal 
+        <cardModalStyles.ImagenModal 
           src={imgSrc} 
           alt={imgAlt} />
-        <styled.ContainerText>
-          <styled.TitleModal>{titleModal}</styled.TitleModal>
-          <styled.DescriptionModal>{descriptionModal}</styled.DescriptionModal>
-          {isPremium && 
-        <styled.ButtonSuscribe
+        <cardModalStyles.CotenedorTexto>
+          <cardModalStyles.TituloModal>{titleModal}</cardModalStyles.TituloModal>
+          <cardModalStyles.DescripcionModal>{descriptionModal}</cardModalStyles.DescripcionModal>
+          {esPremium && 
+        <cardStyles.BotonLectura
           onClick={() => alertSuscription()}>
           Suscríbete
-        </styled.ButtonSuscribe>}
-        </styled.ContainerText>
-      </styled.CardModal>
-    </styled.ContainerModal>
+        </cardStyles.BotonLectura>}
+        </cardModalStyles.CotenedorTexto>
+      </cardModalStyles.TarjetaModal>
+    </styled.ContenedorModal>
   );
 };

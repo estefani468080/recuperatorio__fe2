@@ -7,7 +7,7 @@ import {
   TituloModal,
   CotenedorTexto,
 } from "./CardModal.styles";
-import { CloseButtonStyles } from "../styled";
+import { CloseButton } from "../styled";
 import { CloseButton as Close } from "../../../assets";
 
 const CardModal = ({
@@ -20,9 +20,9 @@ const CardModal = ({
 }: ICardModalProps) => {
   return (
     <TarjetaModal>
-      <CloseButtonStyles onClick={() => setModal(null)}>
+      <CloseButton onClick={() => setModal(null)}>
         <img src={Close} alt="close-button" />
-      </CloseButtonStyles>
+      </CloseButton>
       <ImagenModal src={imageSrc} alt={imageAlt} />
       <CotenedorTexto>
         <TituloModal>{titulo}</TituloModal>

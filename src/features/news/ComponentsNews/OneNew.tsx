@@ -1,22 +1,22 @@
 import React from "react";
-import * as styled from "../styled";
-import { INewsNormalizadas } from "../types";
+import * as styled from "../card/Card.styles";
+import { INoticiasNormalizadas } from "../types";
 
 type Props = {
-    oneNew: INewsNormalizadas;
-    setModal: React.Dispatch<React.SetStateAction<INewsNormalizadas | null>>;
+    oneNew: INoticiasNormalizadas;
+    setModal: React.Dispatch<React.SetStateAction<INoticiasNormalizadas | null>>;
 };
 
 export const OneNew = ({ oneNew, setModal }: Props) => {
   return (
-    <styled.CardNew key={oneNew.title}>
-      <styled.ImageCardNew src={oneNew.image} />
-      <styled.TitleCardNew>{oneNew.title}</styled.TitleCardNew>
-      <styled.DateCardNew>{oneNew.date}</styled.DateCardNew>
-      <styled.DescriptionCardNew>
-        {oneNew.shortDescription}
-      </styled.DescriptionCardNew>
-      <styled.ButtonLectura onClick={() => setModal(oneNew)}>Ver más</styled.ButtonLectura>
-    </styled.CardNew>
+    <styled.TarjetaNoticia key={oneNew.titulo}>
+      <styled.ImagenTarjetaNoticia src={oneNew.imagen} />
+      <styled.TituloTarjetaNoticia>{oneNew.titulo}</styled.TituloTarjetaNoticia>
+      <styled.FechaTarjetaNoticia>{oneNew.fecha}</styled.FechaTarjetaNoticia>
+      <styled.DescripcionTarjetaNoticia>
+        {oneNew.descripcionCorta}
+      </styled.DescripcionTarjetaNoticia>
+      <styled.BotonLectura onClick={() => setModal(oneNew)}>Ver más</styled.BotonLectura>
+    </styled.TarjetaNoticia>
   );
 };

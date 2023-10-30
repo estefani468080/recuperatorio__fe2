@@ -1,20 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import { INewsNormalizadas } from "./types";
+import { INoticiasNormalizadas } from "./types";
 import * as styled from "./styled";
 import { RenderNews } from "./ComponentsNews/RenderNews";
 import RenderModal from "./ComponentsNews/RenderModal";
 
 
 export const News = () =>{
-  const [modal, setModal] = useState<INewsNormalizadas | null>(null);
+  const [modal, setModal] = useState<INoticiasNormalizadas | null>(null);
   return (
-    <styled.ContainerNews>
-      <styled.TitleNews>Noticias de los Simpsons</styled.TitleNews>
-      <styled.ListNews>
+    <styled.ContenedorNoticias>
+      <styled.TituloNoticias>Noticias de los Simpsons</styled.TituloNoticias>
+      <styled.ListaNoticias>
         <RenderNews setModal={setModal}></RenderNews>
         <RenderModal setModal={setModal} modal={modal}/>
-      </styled.ListNews>
-    </styled.ContainerNews>
+      </styled.ListaNoticias>
+    </styled.ContenedorNoticias>
   );
 };

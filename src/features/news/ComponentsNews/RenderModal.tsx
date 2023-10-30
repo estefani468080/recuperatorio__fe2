@@ -1,18 +1,18 @@
 import React from "react";
-import { INewsNormalizadas } from "../types";
+import { INoticiasNormalizadas } from "../types";
 import { Modal } from "./Modal";
 
 type Props = {
-    setModal: React.Dispatch<React.SetStateAction<INewsNormalizadas | null>>;
-    modal: INewsNormalizadas | null;
+    setModal: React.Dispatch<React.SetStateAction<INoticiasNormalizadas | null>>;
+    modal: INoticiasNormalizadas | null;
 };
 
 const RenderModal = ({modal,setModal}: Props) => {
   if(modal){
-    if(modal.isPremium){
-      return<Modal isPremium={true} setModal={setModal}></Modal>;
+    if(modal.esPremium){
+      return<Modal esPremium={true} setModal={setModal}></Modal>;
     }
-    return <Modal isPremium={false} modal={modal} setModal={setModal}/>;
+    return <Modal esPremium={false} modal={modal} setModal={setModal}/>;
   }
   return null;
 };

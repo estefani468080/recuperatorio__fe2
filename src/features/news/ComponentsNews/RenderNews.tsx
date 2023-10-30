@@ -1,10 +1,10 @@
 import React from "react";
 import { useFakeRest } from "../UtilsNews/useFakeRest";
 import { OneNew } from "./OneNew";
-import { INewsNormalizadas } from "../types";
+import { INoticiasNormalizadas } from "../types";
 
 type Props = {
-  setModal: React.Dispatch<React.SetStateAction<INewsNormalizadas | null>>;
+  setModal: React.Dispatch<React.SetStateAction<INoticiasNormalizadas | null>>;
 };
 
 export const RenderNews = ({setModal}: Props) => {

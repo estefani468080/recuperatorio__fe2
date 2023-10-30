@@ -48,7 +48,7 @@ export const ContenedorModal = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-export const CloseButtonStyles = styled.button`
+export const CloseButton = styled.button`
   width: 20px;
   height: 20px;
   padding: 0;
@@ -57,9 +57,11 @@ export const CloseButtonStyles = styled.button`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+
   & img {
     max-width: 100%;
   }
+
   &:hover {
     cursor: pointer;
   }
